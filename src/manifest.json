@@ -14,7 +14,7 @@
         {
           "js": ["scripts/content.js"],
           "matches": [
-            "https://visualstudio.microsoft.com/*",
+            "https://msazure.visualstudio.com/*",
             "https://developer.chrome.com/docs/webstore/*"
           ]
         }

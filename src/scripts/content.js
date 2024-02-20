@@ -1,28 +1,46 @@
 
 const header = document.getElementById("headerArea");
 var headerHeigh = 0;
-// `document.querySelector` may return null if the selector doesn't match anything.
-if (header) {
-  headerHeigh = header.style.height;
-}
 
-function becomeBig(){
-  if (header) {
-    header.style.height = headerHeigh * 2;
+function ShowBaner(){
+  banner1 = document.querySelector(".project-header");
+  banner2 = document.querySelector(".work-item-form-main-header");
+  banner3 = document.querySelector(".vss-PivotBar--bar-two-line");
+  if (banner1) {
+    banner1.style.removeProperty("display");
+  }
+  if (banner2) {
+    banner2.style.removeProperty("display");
+  }
+  if (banner3) {
+    banner3.style.removeProperty("display");
   }
 }
 
-function becomeSmall(){
-  if (header) {
-    header.style.height = headerHeigh;
+function HideBanner(){
+  banner1 = document.querySelector(".project-header");
+  banner2 = document.querySelector(".work-item-form-main-header"); 
+  banner3 = document.querySelector(".vss-PivotBar--bar-two-line");
+  if (banner1) {
+    banner1.style.display = "none";
+  }
+  if (banner2) {
+    banner2.style.display = "none";
+  }
+  if (banner3) {
+    banner3.style.display = "none";
   }
 }
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    console.log(sender.tab ?
-                "from a content script:" + sender.tab.url :
-                "from the extension");
+    console.log(request.action);
+    if(request.action == "show_banner") {
+        ShowBaner();
+    }
+    if(request.action == "hide_banner") {
+        HideBanner();
+    }
     sendResponse({farewell: "Roger"});
     }
 );
