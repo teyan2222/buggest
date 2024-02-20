@@ -1,35 +1,40 @@
 
-const header = document.getElementById("headerArea");
-var headerHeigh = 0;
+bugState = document.getElementById("witc_3_txt");
 
 function ShowBaner(){
-  banner1 = document.querySelector(".project-header");
-  banner2 = document.querySelector(".work-item-form-main-header");
-  banner3 = document.querySelector(".vss-PivotBar--bar-two-line");
-  if (banner1) {
-    banner1.style.removeProperty("display");
-  }
-  if (banner2) {
-    banner2.style.removeProperty("display");
-  }
-  if (banner3) {
-    banner3.style.removeProperty("display");
-  }
+    element = document.querySelector(".project-header");
+    if(element) element.style.removeProperty("display");
+    element = document.querySelector(".work-item-form-main-header");
+    if(element) element.style.removeProperty("display");
+    element = document.querySelector(".vss-PivotBar--bar-two-line");
+    if(element) element.style.removeProperty("display");
+    element = document.querySelector(".work-item-responsive-header-left");
+    if(element) element.style.removeProperty("display");
+
+    brief = document.getElementById("buggest_brief");
+    if(brief) brief.parentNode.removeChild(brief);
+
 }
 
 function HideBanner(){
-  banner1 = document.querySelector(".project-header");
-  banner2 = document.querySelector(".work-item-form-main-header"); 
-  banner3 = document.querySelector(".vss-PivotBar--bar-two-line");
-  if (banner1) {
-    banner1.style.display = "none";
-  }
-  if (banner2) {
-    banner2.style.display = "none";
-  }
-  if (banner3) {
-    banner3.style.display = "none";
-  }
+    element = document.querySelector(".project-header");
+    if(element) element.style.display = "none";
+    element = document.querySelector(".work-item-form-main-header");
+    if(element) element.style.display = "none";
+    element = document.querySelector(".vss-PivotBar--bar-two-line");
+    if(element) element.style.display = "none";
+    element = document.querySelector(".work-item-responsive-header-left");
+    if(element) element.style.display = "none";
+    
+    bugState = document.getElementById("witc_3_txt");
+    bugTitle = document.getElementById("witc_1_txt");
+    infotext = document.getElementsByClassName("info-text-wrapper")[0];
+
+    bugbrief = document.createElement("div");
+    bugbrief.id = "buggest_brief";
+    bugbrief.innerHTML = bugTitle.value + "Statue: " + bugState.value;
+    infotext?.appendChild(bugbrief);
+    
 }
 
 chrome.runtime.onMessage.addListener(
