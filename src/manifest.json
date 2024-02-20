@@ -1,0 +1,22 @@
+{
+    "name": "NASA picture of the day viewer",
+    "version": "0.0.0.1",
+    "manifest_version": 3,
+    "description": "An extension to display the NASA picture of the day.",
+    "icons": {
+        "128": "icons/buggest128x128.png"
+    },
+    "action": {
+      "default_icon": "icons/buggest128x128.png",
+      "default_popup": "popup/popup.html"
+    },
+    "content_scripts": [
+        {
+          "js": ["scripts/content.js"],
+          "matches": [
+            "https://visualstudio.microsoft.com/*",
+            "https://developer.chrome.com/docs/webstore/*"
+          ]
+        }
+      ]
+}
