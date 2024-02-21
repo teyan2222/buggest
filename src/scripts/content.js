@@ -8,7 +8,7 @@ function ShowBaner(){
     if(element) element.style.removeProperty("display");
     element = document.querySelector(".vss-PivotBar--bar-two-line");
     if(element) element.style.removeProperty("display");
-    element = document.querySelector(".work-item-responsive-header-left");
+    element = document.querySelector(".work-item-responsive-header-left"); 
     if(element) element.style.removeProperty("display");
 
     brief = document.getElementById("buggest_brief");
@@ -25,6 +25,8 @@ function HideBanner(){
     if(element) element.style.display = "none";
     element = document.querySelector(".work-item-responsive-header-left");
     if(element) element.style.display = "none";
+    element = document.querySelector(".work-item-responsive-header");
+    if(element) element.style.minHeight = "0";
     
     bugState = document.getElementById("witc_3_txt");
     bugTitle = document.getElementById("witc_1_txt");
